@@ -5,7 +5,7 @@
  * This is derived from revision 15071 of the TivaWare Library.
  *
  *****************************************************************************/
-
+ENTRY (RestISR)
 MEMORY
 {
     FLASH (RX) : ORIGIN = 0x00000000, LENGTH = 0x00040000
