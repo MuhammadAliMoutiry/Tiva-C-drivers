@@ -1,8 +1,6 @@
-
 #include "STD_TYPES.h"
 #include "SYSCTRL_interface.h"
 #include "GPIO_interface.h"
-
 
 //---SYSTEM CONTROL REGISTERS---//
 #define SYS_CTRL_RCGC2  (*((volatile unsigned long *)0x400FE108))   //offset of RCGC2 register is 0x108
@@ -19,24 +17,35 @@
 void delay(unsigned long);
 int main(void)
 {
-   SYSCTRL_voidEnableClock(SYSCTRL_GPIO, SYSCTRL_GPIOF_ID);
-   GPIO_voidInitPort(GPIO_F_APB,0xFF);
-   GPIO_voidEnablePort(GPIO_F_APB);
-   GPIO_voidWritePort(GPIO_F_APB, 0);
-   while(1)
-   {
-       GPIO_voidWritePort(GPIO_F_APB, PF1);
-       delay(1000000);
-       GPIO_voidWritePort(GPIO_F_APB, PF2);
-       delay(1000000);
-       GPIO_voidWritePort(GPIO_F_APB, 0xFF);
-              delay(1000000);
-   }
+    SYSCTRL_voidEnableClock(SYSCTRL_GPIO, SYSCTRL_GPIOF_ID);
+    GPIO_voidInitPin(GPIO_F_APB, 0, OUTPUT);
+    GPIO_voidInitPin(GPIO_F_APB, 1, OUTPUT);
+    GPIO_voidInitPin(GPIO_F_APB, 2, OUTPUT);
+    GPIO_voidInitPin(GPIO_F_APB, 3, OUTPUT);
+    GPIO_voidEnablePin(GPIO_F_APB, 0);
+    GPIO_voidEnablePin(GPIO_F_APB, 1);
+    GPIO_voidEnablePin(GPIO_F_APB, 2);
+    GPIO_voidEnablePin(GPIO_F_APB, 3);
+    while (1)
+    {
+        GPIO_voidWritePin(GPIO_F_APB, 0, LOW);
+        GPIO_voidWritePin(GPIO_F_APB, 1, LOW);
+        GPIO_voidWritePin(GPIO_F_APB, 2, LOW);
+        GPIO_voidWritePin(GPIO_F_APB, 3, HIGH);
+        delay(1000000);
+        GPIO_voidWritePin(GPIO_F_APB, 0, LOW);
+        GPIO_voidWritePin(GPIO_F_APB, 1, HIGH);
+        GPIO_voidWritePin(GPIO_F_APB, 2, LOW);
+        GPIO_voidWritePin(GPIO_F_APB, 3, LOW);
+        delay(1000000);
+
+    }
     //return 0;
 }
 void delay(unsigned long count)
 {
-   unsigned long i=0;
-   for(i=0; i<count; i++);
+    unsigned long i = 0;
+    for (i = 0; i < count; i++)
+        ;
 }
 

@@ -54,7 +54,7 @@ void GPIO_voidInitPort(u32 Copy_u32GPIOPort, u8 Copy_u8PortDir);
  *                                                        GPIO_F_APB
  *                                                        GPIO_F_AHB
  *
- * @param   :  Copy_GPIOCurrent_tSelCurrent  -> Options : GPIO_2M_DRIVE_CURRENT
+ * @param   :  u8 Copy_u8SelCurrent          -> Options : GPIO_2M_DRIVE_CURRENT
  *                                                        GPIO_4M_DRIVE_CURRENT
  *                                                        GPIO_8M_DRIVE_CURRENT
  *
@@ -62,10 +62,10 @@ void GPIO_voidInitPort(u32 Copy_u32GPIOPort, u8 Copy_u8PortDir);
  * @details :  this function select the current for the whole GPIO pins , the whole pins will drive
  *             the same current.
  */
-void GPIO_voidPortSelCurrent(u32 Copy_u32GPIOPort, GPIOCurrent_t Copy_GPIOCurrent_tSelCurrent);
+void GPIO_voidPortSelCurrent(u32 Copy_u32GPIOPort, u8 Copy_u8SelCurrent);
 
 /**
- * @name    :  GPIO_voidSelPortOutState
+ * @name    :  GPIO_voidSelPortState
  * @brief   :  This function selects all GPIO pin state pull up ,pull down and open drain.
  * @param   :  Copy_u32GPIOPort            -> Options :   GPIO_A_APB
  *                                                        GPIO_A_AHB
@@ -88,7 +88,7 @@ void GPIO_voidPortSelCurrent(u32 Copy_u32GPIOPort, GPIOCurrent_t Copy_GPIOCurren
  * @note    :  GPIO pin has only one state at a time ,you can not configure a GPIO in more than
  *             one state at a time.
  */
-void GPIO_voidSelPortOutState(u32 Copy_u32GPIOPort, u8 Copy_u8OpenDrain, u8 Copy_u8PullUp, u8 Copy_u8PullDown);
+void GPIO_voidSelPortState(u32 Copy_u32GPIOPort, u8 Copy_u8OpenDrain, u8 Copy_u8PullUp, u8 Copy_u8PullDown);
 
 /**
  * @name    :  GPIO_voidEnablePort
@@ -129,6 +129,13 @@ void GPIO_voidEnablePort(u32 Copy_u32GPIOPort);
  *
  */
 void GPIO_voidWritePort(u32 Copy_u32GPIOPort , u8 Copy_u8Value);
+u8 GPIO_u8ReadPort(u32 Copy_u32GPIOPort );
 
+void GPIO_voidInitPin(u32 Copy_u32GPIOPort, u8 Copy_u8PinNum, u8 Copy_u8PinDir);
+void GPIO_voidSelPinCurrent(u32 Copy_u32GPIOPort, u8 Copy_u8PinNum,u8 Copy_u8SelCurrent);
+void GPIO_voidSelPinState(u32 Copy_u32GPIOPort, u8 Copy_u8PinNum, u8 Copy_u8PinSate);
+void GPIO_voidEnablePin(u32 Copy_u32GPIOPort, u8 Copy_u8PinNum);
+void GPIO_voidWritePin(u32 Copy_u32GPIOPort , u8 Copy_u8PinNum, u8 Copy_u8Value);
+u8 GPIO_u8ReadPin(u32 Copy_u32GPIOPort , u8 Copy_u8PinNum );
 
 #endif /* GPIO_INTERFACE_H_ */
