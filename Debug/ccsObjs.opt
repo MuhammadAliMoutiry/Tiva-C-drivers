@@ -1,1 +1,0 @@
-"./main.o" "./tm4c123gh6pm_startup_ccs_gcc.o" "./System/02-MCAL/01-SYSCTRL/SYSCTRL_program.o" "./System/02-MCAL/02-GPIO/GPIO_program.o" -Wl,-T"../tm4c123gh6pm.lds" -Wl,--start-group -lc -Wl,--end-group 
