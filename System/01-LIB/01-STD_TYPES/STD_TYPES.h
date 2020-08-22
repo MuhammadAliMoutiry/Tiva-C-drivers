@@ -16,4 +16,6 @@ typedef unsigned long  int   u32;
 #define LOW       0
 #define HIGH      1
 
+#define DISABLE   0
+#define ENABLE    1
 #endif
