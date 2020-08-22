@@ -6,10 +6,14 @@
 #ifndef BIT_MATH_H
 #define BIT_MATH_H
 
+/** Bit Operations */
 #define SET_BIT(VAR,BIT)          VAR |=  (1 << (BIT))
 #define CLR_BIT(VAR,BIT)          VAR &= ~(1 << (BIT)) 
 #define GET_BIT(VAR,BIT)          ((VAR >> BIT) & 1  )
 #define TOG_BIT(VAR,BIT)          VAR ^=  (1 << (BIT))
 
+/** Register Operations */
+#define WR_REG(REG,VAL)           ((*(volatile u32*)(REG)) = VAL )
+#define SET_REG(REG)              WR_REG(REG,0xFF)
 
 #endif 

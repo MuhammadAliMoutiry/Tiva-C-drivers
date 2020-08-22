@@ -13,6 +13,7 @@ ORDERED_OBJS += \
 "./main.o" \
 "./tm4c123gh6pm_startup_ccs_gcc.o" \
 "./System/02-MCAL/01-SYSCTRL/SYSCTRL_program.o" \
+"./System/02-MCAL/02-GPIO/GPIO_program.o" \
 -Wl,-T"../tm4c123gh6pm.lds" \
 $(GEN_CMDS__FLAG) \
 -Wl,--start-group \
@@ -28,8 +29,10 @@ RMDIR := RMDIR /S/Q
 -include sources.mk
 -include subdir_vars.mk
 -include System/02-MCAL/01-SYSCTRL/subdir_vars.mk
+-include System/02-MCAL/02-GPIO/subdir_vars.mk
 -include subdir_rules.mk
 -include System/02-MCAL/01-SYSCTRL/subdir_rules.mk
+-include System/02-MCAL/02-GPIO/subdir_rules.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -160,8 +163,8 @@ TivaSDK.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "main.o" "tm4c123gh6pm_startup_ccs_gcc.o" "System\02-MCAL\01-SYSCTRL\SYSCTRL_program.o" 
-	-$(RM) "main.d" "tm4c123gh6pm_startup_ccs_gcc.d" "System\02-MCAL\01-SYSCTRL\SYSCTRL_program.d" 
+	-$(RM) "main.o" "tm4c123gh6pm_startup_ccs_gcc.o" "System\02-MCAL\01-SYSCTRL\SYSCTRL_program.o" "System\02-MCAL\02-GPIO\GPIO_program.o" 
+	-$(RM) "main.d" "tm4c123gh6pm_startup_ccs_gcc.d" "System\02-MCAL\01-SYSCTRL\SYSCTRL_program.d" "System\02-MCAL\02-GPIO\GPIO_program.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

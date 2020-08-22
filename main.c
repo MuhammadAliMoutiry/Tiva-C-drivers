@@ -1,7 +1,7 @@
 
 #include "STD_TYPES.h"
 #include "SYSCTRL_interface.h"
-
+#include "GPIO_interface.h"
 
 
 //---SYSTEM CONTROL REGISTERS---//
@@ -20,16 +20,16 @@ void delay(unsigned long);
 int main(void)
 {
    SYSCTRL_voidEnableClock(SYSCTRL_GPIO, SYSCTRL_GPIOF_ID);
-   PORTF_DIR |= 0x0000000E;    //set PF1, PF2, PF3 as output
-   PORTF_DEN |= 0x0000000E;    //enable PF1, PF2, PF3
-   PORTF_DATA = 0;
+   GPIO_voidInitPort(GPIO_F_APB,0xFF);
+   GPIO_voidEnablePort(GPIO_F_APB);
+   GPIO_voidWritePort(GPIO_F_APB, 0);
    while(1)
    {
-       PORTF_DATA = PF1 ;
+       GPIO_voidWritePort(GPIO_F_APB, PF1);
        delay(1000000);
-       PORTF_DATA = PF2 ;
+       GPIO_voidWritePort(GPIO_F_APB, PF2);
        delay(1000000);
-       PORTF_DATA = PF3 ;
+       GPIO_voidWritePort(GPIO_F_APB, 0xFF);
               delay(1000000);
    }
     //return 0;

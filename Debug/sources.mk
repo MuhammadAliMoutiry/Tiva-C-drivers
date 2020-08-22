@@ -113,4 +113,5 @@ PDE_DEPS__QUOTED :=
 SUBDIRS := \
 . \
 System/02-MCAL/01-SYSCTRL \
+System/02-MCAL/02-GPIO \
 
