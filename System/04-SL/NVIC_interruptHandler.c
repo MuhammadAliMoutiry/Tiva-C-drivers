@@ -92,12 +92,12 @@ void (* g_pfnVirualVectors[])(void) =
 	IntVirDefaultFun                       // PWM 1 Fault
 };
 
-void NVIC_voidInstallISRFunction(g_ISRVirIdx_t Copy_g_ISRVirIdx_tIdx , void(*isr)(void)){
-g_pfnVirualVectors[idx] = isr ;
+void SNVIC_voidInstallISRFunction(g_ISRVirIdx_t Copy_g_ISRVirIdx_tIdx , void(*isr)(void)){
+g_pfnVirualVectors[Copy_g_ISRVirIdx_tIdx] = isr ;
 }
 
-void NVIC_voidDeinstallISRFunction(g_ISRVirIdx_t Copy_g_ISRVirIdx_tIdx ){
-g_pfnVirualVectors[idx] = IntVirDefaultFun ;
+void SNVIC_voidDeinstallISRFunction(g_ISRVirIdx_t Copy_g_ISRVirIdx_tIdx ){
+g_pfnVirualVectors[Copy_g_ISRVirIdx_tIdx] = IntVirDefaultFun ;
 }
 
 void IntVirDefaultFun(void){
@@ -105,25 +105,25 @@ void IntVirDefaultFun(void){
 }
 
 void PortAISRHandler(void){
-	g_pfnVirualVectors[NVIC_GPIOA_IRQ];
+	(g_pfnVirualVectors[NVIC_GPIOA_IRQ])();
 }
 
 void PortBISRHandler(void){
-	g_pfnVirualVectors[NVIC_GPIOB_IRQ];
+	(g_pfnVirualVectors[NVIC_GPIOB_IRQ])();
 }
 
 void PortCISRHandler(void){
-	g_pfnVirualVectors[NVIC_GPIOC_IRQ];
+	(g_pfnVirualVectors[NVIC_GPIOC_IRQ])();
 }
 
 void PortDISRHandler(void){
-	g_pfnVirualVectors[NVIC_GPIOD_IRQ];
+	(g_pfnVirualVectors[NVIC_GPIOD_IRQ])();
 }
 
 void PortEISRHandler(void){
-	g_pfnVirualVectors[NVIC_GPIOE_IRQ];
+	(g_pfnVirualVectors[NVIC_GPIOE_IRQ])();
 }
 
 void PortFISRHandler(void){
-	g_pfnVirualVectors[NVIC_GPIOF_IRQ];
+	(g_pfnVirualVectors[NVIC_GPIOF_IRQ])();
 }

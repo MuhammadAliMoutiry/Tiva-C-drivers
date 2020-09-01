@@ -544,6 +544,16 @@ void MGPIO_voidConfigPinAlternateFunc(u32 Copy_u32PinConfig);
 
  void MGPIO_voidEnableExtInterrupt(u32 Copy_u32GPIOPort , u8 Copy_u8PinNum);
  void MGPIO_voidDisableExtInterrupt(u32 Copy_u32GPIOPort , u8 Copy_u8PinNum);
+
+ /**  Copy_u8InterruptSense Options :    GPIO_INTERRUPT_LOW_LEVEL
+  *                                      GPIO_INTERRUPT_HIGH_LEVEL
+  *                                      GPIO_INTERRUPT_FALLING_EDGE
+  *                                      GPIO_INTERRUPT_RISING_EDGE
+  *                                      GPIO_INTERRUPT_BOTH_EDGES
+  *
+  *
+  * */
+
  void MGPIO_voidInitInterrupt(u32 Copy_u32GPIOPort , u8 Copy_u8PinNum, u8 Copy_u8InterruptSense );
  u8 MGPIO_voidGetPortRawInterruptStatus(u32 Copy_u32GPIOPort);
  u8 MGPIO_voidGetPinRawInterruptStatus(u32 Copy_u32GPIOPort , u8 Copy_u8PinNum);

@@ -90,7 +90,7 @@ typedef enum interruptIndx {
 	NVIC_PWM1_FAULT_IRQ
 } g_ISRVirIdx_t;
 
-void NVIC_voidDeinstallISRFunction(g_ISRVirIdx_t Copy_g_ISRVirIdx_tIdx );
-void NVIC_voidInstallISRFunction(g_ISRVirIdx_t Copy_g_ISRVirIdx_tIdx , void(*isr)(void));
+void SNVIC_voidDeinstallISRFunction(g_ISRVirIdx_t Copy_g_ISRVirIdx_tIdx );
+void SNVIC_voidInstallISRFunction(g_ISRVirIdx_t Copy_g_ISRVirIdx_tIdx , void(*isr)(void));
 void IntVirDefaultFun(void);
 #endif /*NVIC_INTERRUPTHANDLER_C_ */

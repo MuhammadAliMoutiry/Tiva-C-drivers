@@ -111,6 +111,10 @@
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.INCLUDE_PATH.921620355" name="Include paths (-I)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_GNU_7.0.compilerID.INCLUDE_PATH" valueType="includePath">
 									<listOptionValue builtIn="false" value="${workspace_loc:/${ProjName}/System/01-LIB/01-STD_TYPES}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/${ProjName}/System/04-SL}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/${ProjName}/System/02-MCAL/03-NVIC}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/${ProjName}/System/02-MCAL/04-SCB}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/${ProjName}/System/02-MCAL/05-SYSTICK}"/>
 									<listOptionValue builtIn="false" value="${workspace_loc:/${ProjName}/System/02-MCAL/02-GPIO}"/>
 									<listOptionValue builtIn="false" value="${workspace_loc:/${ProjName}/System/01-LIB/02-BIT_MATH}"/>
 									<listOptionValue builtIn="false" value="${workspace_loc:/${ProjName}/System/02-MCAL/01-SYSCTRL}"/>

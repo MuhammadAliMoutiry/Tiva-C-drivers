@@ -5,7 +5,7 @@
 /***************************************************************************************************/
 #ifndef NVIC_INTERFACE_H_
 #define NVIC_INTERFACE_H_
-
+#include "NVIC_private.h"
 /**
 Copy_u8InterruptID is value from :
                                     NVIC_GPIOA_ID
