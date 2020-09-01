@@ -1,20 +1,18 @@
 /***************************************************************************************************/
 /** Author    : Muhammad Ali Moutiry                                                               */
-/** Date      : 20 August 2020                                                                     */
+/** Date      : 31 August 2020                                                                     */
 /** Version   : V01                                                                                */
 /***************************************************************************************************/
-
-#ifndef SYSCTRL_INTERFACE_H_
-#define SYSCTRL_INTERFACE_H_
-
 #include "STD_TYPES.h"
 #include "BIT_MATH.h"
 
-#include "SYSCTRL_reg.h"
-#include "SYSCTRL_private.h"
-#include "SYSCTRL_config.h"
+#include "SCB_reg.h"
+#include "SYSCTRL_interface.h"
+#include "SCB_config.h"
+#include "SCB_private.h"
 
-void MSYSCTRL_voidEnableClock(u8 Copy_u8Peripheral , u8 Copy_u8PerId);
-void MSYSCTRL_voidDisableClock(u8 Copy_u8Peripheral , u8 Copy_u8PerId);
+void MSCB_voidSetGroupPriority(){
+	WR_REG(SCB_APINT , MNVIC_GROUP_SUB_DISTRIBUTION);
+}
 
-#endif /* SYSCTRL_INTERFACE_H_ */
+

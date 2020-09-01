@@ -199,7 +199,11 @@
 
 #define GPIO_COMMIT_UNLOCK       0x4C4F434B
 
-
-
+/** Interupt sense configurations */
+#define GPIO_INTERRUPT_LOW_LEVEL        0
+#define GPIO_INTERRUPT_HIGH_LEVEL       1
+#define GPIO_INTERRUPT_FALLING_EDGE     2
+#define GPIO_INTERRUPT_RISING_EDGE      3
+#define GPIO_INTERRUPT_BOTH_EDGES       4
 
 #endif /* SYSTEM_02_MCAL_02_GPIO_GPIO_PRIVATE_H_ */

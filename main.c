@@ -1,4 +1,5 @@
 #include "STD_TYPES.h"
+#include "BIT_MATH.h"
 #include "SYSCTRL_interface.h"
 #include "GPIO_interface.h"
 
@@ -6,34 +7,34 @@
 void delay(unsigned long);
 int main(void)
 {
-    SYSCTRL_voidEnableClock(SYSCTRL_GPIO, SYSCTRL_GPIOF_ID);
+    MSYSCTRL_voidEnableClock(SYSCTRL_GPIO, SYSCTRL_GPIOF_ID);
 
 
-    GPIO_voidInitPin(GPIO_F_APB, 0, INPUT);
-    GPIO_voidInitPin(GPIO_F_APB, 4, INPUT);
-    GPIO_voidSelPinState(GPIO_F_APB, 0, GPIO_PIN_PULL_UP);
-    GPIO_voidSelPinState(GPIO_F_APB, 4, GPIO_PIN_PULL_UP);
-    GPIO_voidInitPin(GPIO_F_APB, 1, OUTPUT);
-    GPIO_voidInitPin(GPIO_F_APB, 2, OUTPUT);
-    GPIO_voidInitPin(GPIO_F_APB, 3, OUTPUT);
-    GPIO_voidEnablePin(GPIO_F_APB, 0);
-    GPIO_voidEnablePin(GPIO_F_APB, 1);
-    GPIO_voidEnablePin(GPIO_F_APB, 2);
-    GPIO_voidEnablePin(GPIO_F_APB, 3);
-    GPIO_voidEnablePin(GPIO_F_APB, 4);
+    MGPIO_voidInitPin(GPIO_F_APB, 0, INPUT);
+    MGPIO_voidInitPin(GPIO_F_APB, 4, INPUT);
+    MGPIO_voidSelPinState(GPIO_F_APB, 0, GPIO_PIN_PULL_UP);
+    MGPIO_voidSelPinState(GPIO_F_APB, 4, GPIO_PIN_PULL_UP);
+    MGPIO_voidInitPin(GPIO_F_APB, 1, OUTPUT);
+    MGPIO_voidInitPin(GPIO_F_APB, 2, OUTPUT);
+    MGPIO_voidInitPin(GPIO_F_APB, 3, OUTPUT);
+    MGPIO_voidEnablePin(GPIO_F_APB, 0);
+    MGPIO_voidEnablePin(GPIO_F_APB, 1);
+    MGPIO_voidEnablePin(GPIO_F_APB, 2);
+    MGPIO_voidEnablePin(GPIO_F_APB, 3);
+    MGPIO_voidEnablePin(GPIO_F_APB, 4);
     while (1)
     {
-        if(!GPIO_u8ReadPin(GPIO_F_APB, 0)){
-        GPIO_voidWritePin(GPIO_F_APB, 0, LOW);
-        GPIO_voidWritePin(GPIO_F_APB, 1, LOW);
-        GPIO_voidWritePin(GPIO_F_APB, 2, LOW);
-        GPIO_voidWritePin(GPIO_F_APB, 3, HIGH);
+        if(!MGPIO_u8ReadPin(GPIO_F_APB, 0)){
+        MGPIO_voidWritePin(GPIO_F_APB, 0, LOW);
+        MGPIO_voidWritePin(GPIO_F_APB, 1, LOW);
+        MGPIO_voidWritePin(GPIO_F_APB, 2, LOW);
+        MGPIO_voidWritePin(GPIO_F_APB, 3, HIGH);
         delay(1000000);
-        }else if(!GPIO_u8ReadPin(GPIO_F_APB, 4)){
-        GPIO_voidWritePin(GPIO_F_APB, 0, LOW);
-        GPIO_voidWritePin(GPIO_F_APB, 1, HIGH);
-        GPIO_voidWritePin(GPIO_F_APB, 2, LOW);
-        GPIO_voidWritePin(GPIO_F_APB, 3, LOW);
+        }else if(!MGPIO_u8ReadPin(GPIO_F_APB, 4)){
+        MGPIO_voidWritePin(GPIO_F_APB, 0, LOW);
+        MGPIO_voidWritePin(GPIO_F_APB, 1, HIGH);
+        MGPIO_voidWritePin(GPIO_F_APB, 2, LOW);
+        MGPIO_voidWritePin(GPIO_F_APB, 3, LOW);
         delay(1000000);
         }
     }

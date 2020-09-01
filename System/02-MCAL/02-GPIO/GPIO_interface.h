@@ -19,7 +19,7 @@
 /**************************************************************************************************/
 
 /**
- * @name     :  GPIO_voidInitPort
+ * @name     :  MGPIO_voidInitPort
  * @brief    :  This function initializes port ( INPUT and OUTPUT ) pins
  * @param    :  Copy_u32GPIOPort   -> Options :   GPIO_A_APB
  *                                                GPIO_A_AHB
@@ -40,10 +40,10 @@
  * @see     :  SYSCTRL_voidEnableClock
  * @note    :  Using x_x_AHB needs to allow AHB bus access throw system control peripheral.
  */
-void GPIO_voidInitPort(u32 Copy_u32GPIOPort, u8 Copy_u8PortDir);
+void MGPIO_voidInitPort(u32 Copy_u32GPIOPort, u8 Copy_u8PortDir);
 
 /**
- * @name    :  GPIO_voidPortSelCurrent
+ * @name    :  MGPIO_voidPortSelCurrent
  * @brief   :  Select drive current for the whole GPIO port pins
  * @param   :  Copy_u32GPIOPort            -> Options :   GPIO_A_APB
  *                                                        GPIO_A_AHB
@@ -66,10 +66,10 @@ void GPIO_voidInitPort(u32 Copy_u32GPIOPort, u8 Copy_u8PortDir);
  * @details :  this function select the current for the whole GPIO pins , the whole pins will drive
  *             the same current.
  */
-void GPIO_voidPortSelCurrent(u32 Copy_u32GPIOPort, u8 Copy_u8SelCurrent);
+void MGPIO_voidPortSelCurrent(u32 Copy_u32GPIOPort, u8 Copy_u8SelCurrent);
 
 /**
- * @name    :  GPIO_voidSelPortState
+ * @name    :  MGPIO_voidSelPortState
  * @brief   :  This function selects all GPIO pin state pull up ,pull down and open drain.
  * @param   :  Copy_u32GPIOPort            -> Options :   GPIO_A_APB
  *                                                        GPIO_A_AHB
@@ -92,10 +92,10 @@ void GPIO_voidPortSelCurrent(u32 Copy_u32GPIOPort, u8 Copy_u8SelCurrent);
  * @note    :  GPIO pin has only one state at a time ,you can not configure a GPIO in more than
  *             one state at a time.
  */
-void GPIO_voidSelPortState(u32 Copy_u32GPIOPort, u8 Copy_u8OpenDrain, u8 Copy_u8PullUp, u8 Copy_u8PullDown);
+void MGPIO_voidSelPortState(u32 Copy_u32GPIOPort, u8 Copy_u8OpenDrain, u8 Copy_u8PullUp, u8 Copy_u8PullDown);
 
 /**
- * @name    :  GPIO_voidEnablePort
+ * @name    :  MGPIO_voidEnablePort
  * @brief   :  This function Enables a GPIO port.
  * @param   :  Copy_u32GPIOPort            -> Options :   GPIO_A_APB
  *                                                        GPIO_A_AHB
@@ -111,10 +111,10 @@ void GPIO_voidSelPortState(u32 Copy_u32GPIOPort, u8 Copy_u8OpenDrain, u8 Copy_u8
  *                                                        GPIO_F_AHB
  * @return   :  no return value
  */
-void GPIO_voidEnablePort(u32 Copy_u32GPIOPort);
+void MGPIO_voidEnablePort(u32 Copy_u32GPIOPort);
 
 /**
- * @name    :  GPIO_voidWritePort
+ * @name    :  MGPIO_voidWritePort
  * @brief   :  This function writes date to GPIO port.
  * @param   :  Copy_u32GPIOPort            -> Options :   GPIO_A_APB
  *                                                        GPIO_A_AHB
@@ -132,10 +132,10 @@ void GPIO_voidEnablePort(u32 Copy_u32GPIOPort);
  * @param   :  Copy_u8Value  -> values to be written on GPIO port
  *
  */
-void GPIO_voidWritePort(u32 Copy_u32GPIOPort , u8 Copy_u8Value);
+void MGPIO_voidWritePort(u32 Copy_u32GPIOPort , u8 Copy_u8Value);
 
 /**
- * @name    :  GPIO_u8ReadPort
+ * @name    :  MGPIO_u8ReadPort
  * @brief   :  This function reads data from GPIO port.
  * @param   :  Copy_u32GPIOPort            -> Options :   GPIO_A_APB
  *                                                        GPIO_A_AHB
@@ -151,10 +151,10 @@ void GPIO_voidWritePort(u32 Copy_u32GPIOPort , u8 Copy_u8Value);
  *
  * @return   :  8 bit data
  */
-u8 GPIO_u8ReadPort(u32 Copy_u32GPIOPort );
+u8 MGPIO_u8ReadPort(u32 Copy_u32GPIOPort );
 
 /**
- * @name    :  GPIO_voidEnabelPortAlternateFunc
+ * @name    :  MGPIO_voidEnabelPortAlternateFunc
  * @brief   :  This function enable alternative functionality for a GPIO port.
  * @param   :  Copy_u32GPIOPort            -> Options :   GPIO_A_APB
  *                                                        GPIO_A_AHB
@@ -169,10 +169,10 @@ u8 GPIO_u8ReadPort(u32 Copy_u32GPIOPort );
  *                                                        GPIO_F_APB
  * @param  :  Copy_u8Value -> value to enable or disable Alternative functions.
  */
-void GPIO_voidEnabelPortAlternateFunc(u32 Copy_u32GPIOPort ,u8 Copy_u8Value);
+void MGPIO_voidEnabelPortAlternateFunc(u32 Copy_u32GPIOPort ,u8 Copy_u8Value);
 
 /**
- * @name    :  GPIO_voidEnablePortSlewRateControl
+ * @name    :  MGPIO_voidEnablePortSlewRateControl
  * @brief   :  This function enable slew rate control for a GPIO port.
  * @param   :  Copy_u32GPIOPort            -> Options :   GPIO_A_APB
  *                                                        GPIO_A_AHB
@@ -187,14 +187,14 @@ void GPIO_voidEnabelPortAlternateFunc(u32 Copy_u32GPIOPort ,u8 Copy_u8Value);
  *                                                        GPIO_F_APB
  * @param  :  Copy_u8Value -> value to enable or disable slew rate control.
  */
-void GPIO_voidEnablePortSlewRateControl(u32 Copy_u32GPIOPort ,u8 Copy_u8Value);
+void MGPIO_voidEnablePortSlewRateControl(u32 Copy_u32GPIOPort ,u8 Copy_u8Value);
 
 /**************************************************************************************************/
 /**********************************  Pin Public Functions ****************************************/
 /**************************************************************************************************/
 
 /**
- * @name    :  GPIO_voidInitPin
+ * @name    :  MGPIO_voidInitPin
  * @brief   :  This function initialize pin direction.
  * @param   :  Copy_u32GPIOPort            -> Options :   GPIO_A_APB
  *                                                        GPIO_A_AHB
@@ -211,10 +211,10 @@ void GPIO_voidEnablePortSlewRateControl(u32 Copy_u32GPIOPort ,u8 Copy_u8Value);
  * @param  :  Copy_u8Value  ->    Options :   INPUT
  *                                            OUTPUT
  */
-void GPIO_voidInitPin(u32 Copy_u32GPIOPort, u8 Copy_u8PinNum, u8 Copy_u8PinDir);
+void MGPIO_voidInitPin(u32 Copy_u32GPIOPort, u8 Copy_u8PinNum, u8 Copy_u8PinDir);
 
 /**
- * @name    :  GPIO_voidSelPinCurrent
+ * @name    :  MGPIO_voidSelPinCurrent
  * @brief   :  This function selects pin drive current.
  * @param   :  Copy_u32GPIOPort            -> Options :   GPIO_A_APB
  *                                                        GPIO_A_AHB
@@ -232,10 +232,10 @@ void GPIO_voidInitPin(u32 Copy_u32GPIOPort, u8 Copy_u8PinNum, u8 Copy_u8PinDir);
  *                                                 GPIO_4M_DRIVE_CURRENT
  *                                                 GPIO_8M_DRIVE_CURRENT
  */
-void GPIO_voidSelPinCurrent(u32 Copy_u32GPIOPort, u8 Copy_u8PinNum,u8 Copy_u8SelCurrent);
+void MGPIO_voidSelPinCurrent(u32 Copy_u32GPIOPort, u8 Copy_u8PinNum,u8 Copy_u8SelCurrent);
 
 /**
- * @name    :  GPIO_voidSelPinState
+ * @name    :  MGPIO_voidSelPinState
  * @brief   :  This function selects pin state pull up,pull down and open drain.
  * @param   :  Copy_u32GPIOPort            -> Options :   GPIO_A_APB
  *                                                        GPIO_A_AHB
@@ -254,10 +254,10 @@ void GPIO_voidSelPinCurrent(u32 Copy_u32GPIOPort, u8 Copy_u8PinNum,u8 Copy_u8Sel
  *                                              GPIO_PIN_PULL_DOWN
  *                                              GPIO_PIN_OPEN_DRAIN
  */
-void GPIO_voidSelPinState(u32 Copy_u32GPIOPort, u8 Copy_u8PinNum, u8 Copy_u8PinSate);
+void MGPIO_voidSelPinState(u32 Copy_u32GPIOPort, u8 Copy_u8PinNum, u8 Copy_u8PinSate);
 
 /**
- * @name    :  GPIO_voidEnablePin
+ * @name    :  MGPIO_voidEnablePin
  * @brief   :  This function enables a specific GPIO pin.
  * @param   :  Copy_u32GPIOPort            -> Options :   GPIO_A_APB
  *                                                        GPIO_A_AHB
@@ -272,10 +272,10 @@ void GPIO_voidSelPinState(u32 Copy_u32GPIOPort, u8 Copy_u8PinNum, u8 Copy_u8PinS
  *                                                        GPIO_F_APB
  * @param  :  Copy_u8PinNum   ->    pin numbers from 0 to 8
  */
-void GPIO_voidEnablePin(u32 Copy_u32GPIOPort, u8 Copy_u8PinNum);
+void MGPIO_voidEnablePin(u32 Copy_u32GPIOPort, u8 Copy_u8PinNum);
 
 /**
- * @name    :  GPIO_voidWritePin
+ * @name    :  MGPIO_voidWritePin
  * @brief   :  This function writes value to a specific GPIO pin.
  * @param   :  Copy_u32GPIOPort            -> Options :   GPIO_A_APB
  *                                                        GPIO_A_AHB
@@ -292,10 +292,10 @@ void GPIO_voidEnablePin(u32 Copy_u32GPIOPort, u8 Copy_u8PinNum);
  * @param  :  Copy_u8Value    ->    Options : LOW
  *                                            HIGH
  */
-void GPIO_voidWritePin(u32 Copy_u32GPIOPort , u8 Copy_u8PinNum, u8 Copy_u8Value);
+void MGPIO_voidWritePin(u32 Copy_u32GPIOPort , u8 Copy_u8PinNum, u8 Copy_u8Value);
 
 /**
- * @name    :  GPIO_u8ReadPin
+ * @name    :  MGPIO_u8ReadPin
  * @brief   :  This function reads value from a specific GPIO pin.
  * @param   :  Copy_u32GPIOPort            -> Options :   GPIO_A_APB
  *                                                        GPIO_A_AHB
@@ -312,10 +312,10 @@ void GPIO_voidWritePin(u32 Copy_u32GPIOPort , u8 Copy_u8PinNum, u8 Copy_u8Value)
  * @return :  pin value       ->    Options : HIGH -> 1
  *                                            LOW  -> 0
  */
-u8 GPIO_u8ReadPin(u32 Copy_u32GPIOPort , u8 Copy_u8PinNum );
+u8 MGPIO_u8ReadPin(u32 Copy_u32GPIOPort , u8 Copy_u8PinNum );
 
 /**
- * @name    :  GPIO_voidAlternatePinFunc
+ * @name    :  MGPIO_voidAlternatePinFunc
  * @brief   :  This function enable/disable GPIO pin alternate function.
  * @param   :  Copy_u32GPIOPort            -> Options :   GPIO_A_APB
  *                                                        GPIO_A_AHB
@@ -332,10 +332,10 @@ u8 GPIO_u8ReadPin(u32 Copy_u32GPIOPort , u8 Copy_u8PinNum );
  * @param  :  Copy_u8Value    ->    Options : Enable
  *                                            Disable
  */
-void GPIO_voidAlternatePinFunc(u32 Copy_u32GPIOPort ,u8 Copy_u8PinNum ,u8 Copy_u8Value);
+void MGPIO_voidAlternatePinFunc(u32 Copy_u32GPIOPort ,u8 Copy_u8PinNum ,u8 Copy_u8Value);
 
 /**
- * @name    :  GPIO_voidControlPinSlewRate
+ * @name    :  MGPIO_voidControlPinSlewRate
  * @brief   :  This function enable/disable GPIO pin slew rate control.
  * @param   :  Copy_u32GPIOPort            -> Options :   GPIO_A_APB
  *                                                        GPIO_A_AHB
@@ -352,10 +352,10 @@ void GPIO_voidAlternatePinFunc(u32 Copy_u32GPIOPort ,u8 Copy_u8PinNum ,u8 Copy_u
  * @param  :  Copy_u8Value    ->    Options : Enable
  *                                            Disable
  */
-void GPIO_voidControlPinSlewRate(u32 Copy_u32GPIOPort , u8 Copy_u8PinNum, u8 Copy_u8Value);
+void MGPIO_voidControlPinSlewRate(u32 Copy_u32GPIOPort , u8 Copy_u8PinNum, u8 Copy_u8Value);
 
 /**
- * @name    :  GPIO_voidConfigPinAlternateFunc
+ * @name    :  MGPIO_voidConfigPinAlternateFunc
  * @brief   :  This function select the alternative functionality of a GPIO pin.
  * @param   :  Copy_u32PinConfig          -> Options :  GPIO_PA0_U0RX
  *                                                      GPIO_PA0_CAN1RX
@@ -538,6 +538,16 @@ void GPIO_voidControlPinSlewRate(u32 Copy_u32GPIOPort , u8 Copy_u8PinNum, u8 Cop
  *                                                      GPIO_PF4_USB0EPEN
  *
  */
-void GPIO_voidConfigPinAlternateFunc(u32 Copy_u32PinConfig);
+void MGPIO_voidConfigPinAlternateFunc(u32 Copy_u32PinConfig);
 
+
+
+ void MGPIO_voidEnableExtInterrupt(u32 Copy_u32GPIOPort , u8 Copy_u8PinNum);
+ void MGPIO_voidDisableExtInterrupt(u32 Copy_u32GPIOPort , u8 Copy_u8PinNum);
+ void MGPIO_voidInitInterrupt(u32 Copy_u32GPIOPort , u8 Copy_u8PinNum, u8 Copy_u8InterruptSense );
+ u8 MGPIO_voidGetPortRawInterruptStatus(u32 Copy_u32GPIOPort);
+ u8 MGPIO_voidGetPinRawInterruptStatus(u32 Copy_u32GPIOPort , u8 Copy_u8PinNum);
+ u8 MGPIO_voidGetPortMaskInterruptStatus(u32 Copy_u32GPIOPort);
+ u8 MGPIO_voidGetPinMaskInterruptStatus(u32 Copy_u32GPIOPort , u8 Copy_u8PinNum);
+ void MGPIO_voidClearInterrupt(u32 Copy_u32GPIOPort , u8 Copy_u8PinNum);
 #endif /* GPIO_INTERFACE_H_ */

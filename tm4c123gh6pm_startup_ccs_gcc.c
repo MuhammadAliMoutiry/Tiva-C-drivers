@@ -58,6 +58,14 @@ static uint32_t pui32Stack[128];
 //
 //*****************************************************************************
 // To be added by user
+//*****************************************************************************
+void PortAISRHandler(void);
+void PortBISRHandler(void);
+void PortCISRHandler(void);
+void PortDISRHandler(void);
+void PortEISRHandler(void);
+void PortFISRHandler(void);
+/* *******************************************************************************/
 
 //*****************************************************************************
 //
@@ -86,11 +94,11 @@ void (* const g_pfnVectors[])(void) =
     0,                                      // Reserved
     IntDefaultHandler,                      // The PendSV handler
     IntDefaultHandler,                      // The SysTick handler
-    IntDefaultHandler,                      // GPIO Port A
-    IntDefaultHandler,                      // GPIO Port B
-    IntDefaultHandler,                      // GPIO Port C
-    IntDefaultHandler,                      // GPIO Port D
-    IntDefaultHandler,                      // GPIO Port E
+	PortAISRHandler,                      // GPIO Port A
+	PortBISRHandler,                      // GPIO Port B
+	PortCISRHandler,                      // GPIO Port C
+	PortDISRHandler,                      // GPIO Port D
+	PortEISRHandler,                      // GPIO Port E
     IntDefaultHandler,                      // UART0 Rx and Tx
     IntDefaultHandler,                      // UART1 Rx and Tx
     IntDefaultHandler,                      // SSI0 Rx and Tx
@@ -116,7 +124,7 @@ void (* const g_pfnVectors[])(void) =
     IntDefaultHandler,                      // Analog Comparator 2
     IntDefaultHandler,                      // System Control (PLL, OSC, BO)
     IntDefaultHandler,                      // FLASH Control
-    IntDefaultHandler,                      // GPIO Port F
+	PortFISRHandler,                      // GPIO Port F
     IntDefaultHandler,                      // GPIO Port G
     IntDefaultHandler,                      // GPIO Port H
     IntDefaultHandler,                      // UART2 Rx and Tx
